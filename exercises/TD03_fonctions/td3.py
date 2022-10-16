@@ -55,3 +55,29 @@ def afficheTemps(jour,heure,minutes,secondes):
 
 afficheTemps(0,0,0,8)
 
+def sommeTemps(t1,t2):
+    a,b,c,d=(t1[0]+t2[0]),(t1[1]+t2[1]),(t1[2]+t2[2]),(t1[3]+t2[3])
+    j,h,m,s=("jour"),("heure"),("minute"),("seconde")
+    if a>1:
+        j+="s"
+    else:
+        j=""
+        a=""
+    if b>1:
+        h+="s"
+    else:
+        b=""
+        h=""
+    if c>1:
+        m+="s"
+    else:
+        c=""
+        m=""
+    if d>1:
+        s+="s"
+    else:
+        d=""
+        s=""
+    print(a,j,b,h,c,m,d,s)
+sommeTemps((4,1,2,3),(2,3,4,5))
+
