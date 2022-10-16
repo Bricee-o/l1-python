@@ -18,10 +18,40 @@ def tes(temps):
 tes(2)
 
 #secondes en temps = scet
-def scet(temps): #REFAIRE EN MIEUX
+def scet(temps): #RATE REFAIRE
     a=temps
-    print("Il y a",a//86400,"jours",a//3600,"heures",a//60,"minutes dans",a,"secondes")
+    aj=a//86400
+    ah=aj*24
+    am=ah*60
+    asc=am*60
+    print("C'est égal à",aj,"jours",ah,"heures",am,"minutes et",asc,"secondes")
 scet(7295762)
 
+def afficheTemps(jour,heure,minutes,secondes):
+    #jour,heure,minutes,secondes=1,2,3,4
+    j,h,m,s=("jour"),("heure"),("minute"),("seconde")
+    if jour>1:
+        j+="s"
+    else:
+        j=""
+        jour=""
+    if heure>1:
+        h+="s"
+    else:
+        heure=""
+        h=""
+    if minutes>1:
+        m+="s"
+    else:
+        minutes=""
+        m=""
+    if secondes>1:
+        s+="s"
+    else:
+        secondes=""
+        s=""
+    print(jour,j,heure,h,minutes,m,secondes,s)
 
+
+afficheTemps(0,0,0,8)
 
