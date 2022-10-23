@@ -1,4 +1,4 @@
-#Regarder les sites"lint code et nint ou nit code je sais plus"
+#Regarder le site"lint code" pour entrainement
 
 #Questions de cours:
 
@@ -7,7 +7,8 @@
 ##print(var1+var2) # On ne peut pas additonner un type float et un type str
 
 #3)
-##print(5*3==15 or 4*2==9 and 18//6==2)#Revoir!
+##print(5*3==15 or 4*2==9 and 18//6==2)#True car True or ((False and False)=False)
+                                       #DONC C EST TRUE
 
 #4)
 ##print(type(12=3*4))#erreur de redac c'est "==".
@@ -33,14 +34,51 @@
 #nombre donné par l'utilisateur est plus grand que 1 et qu'il divise le nombre aléatoire. Proposer
 #une solution en utilisant une seule instruction if.
 
-import random
+#import random
 
-a=random.randint(0,9)
-b=int(input("entrer un nb à 1 chiffre"))
-if b>9:
-    print("Ce n'est pas un nombre à 1 chiffre, recommencer.")
-if b>1 and a%b==0:
-    print("Diviseur")
-else:
-    print("Nope")
+#a=random.randint(10,20)
+#b=int(input("entrer un nb à 1 chiffre"))
+#if b>9:
+#    print("Ce n'est pas un nombre à 1 chiffre, recommencer.")
+#if b>1 and a%b==0:
+#    print("Diviseur")
+#else:
+#    print("Nope")
 
+#Ex2 seconde version
+
+#import random
+#a=random.randint(10,20)
+#b=int(input("entrer un nb à 1 chiffre"))
+#if 9>b>1 and a%b==0:
+#    print("Diviseur")
+#else:
+#   print("non")
+
+#Ex 3
+
+#var1=3
+#var2=-3
+#if var1>1 and var2>1 or var1<1 and var2 <1:
+#    print("meme signe")
+#    var1,var2=var2,var1
+#    print(var1," ",var2)
+#else:
+#    var1,var2=var1**2,var1*var2
+#    print(var1,var2)
+
+#While for
+#Ex2
+
+#n=int(input("anniversaire"))
+#cmpt=0
+#for i in range(1,n+1):
+#    cmpt+=120
+#cmpt+=3*n
+#print(cmpt)
+
+#Ex3
+
+#nb=int(input("nb"))
+#for i in range(11):
+#    print(nb-i)
