@@ -1,3 +1,5 @@
+#REFAIRE
+
 #Un temps a le format suivant: (jour: int, heure: int, minute: int, seconde: int).
 #C'est un tuple de 4 éléments. Par exemple (4, 3, 13, 20) correspond à 4 jours, 3 heures, 13 minutes et 20 secondes.
 #Si on a une variable temps = (4, 3, 13, 20), pour accéder au premier élément on fait temps\[0\] ce qui donne 4,
@@ -79,5 +81,7 @@ def sommeTemps(t1,t2):
         d=""
         s=""
     print(a,j,b,h,c,m,d,s)
-sommeTemps((4,1,2,3),(2,3,4,5))
+sommeTemps((0,1,2,3),(0,3,4,5))
 
+def prptemps(temps,proportion):
+    print("blabla")

@@ -1,4 +1,4 @@
-import unittest
+import unittest   #(HORS PROGRAMME) #REVOIR + APP PYTHON A COTE POUR ETRE TRANQUILLE.
 
 def is_even(nbr):
     """
@@ -9,7 +9,7 @@ def is_even(nbr):
 
 def is_prime(nbr):
     """
-    Cette fonction teste si un nombre est pair.
+    Cette fonction teste si un nombre est premier.
     """
     for i in range(2,nbr):
         if nbr % i == 0:
