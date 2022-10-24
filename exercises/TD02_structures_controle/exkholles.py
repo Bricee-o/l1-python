@@ -29,10 +29,7 @@
 #else:
     #print(a,b)
 
-#Exercice 2. Ecrire un programme qui génère de manière aléatoire un nombre à deux chiffres puis
-#demande à l'utilisateur de saisir un nombre à un chiffre. Le programme affche Diviseur si le
-#nombre donné par l'utilisateur est plus grand que 1 et qu'il divise le nombre aléatoire. Proposer
-#une solution en utilisant une seule instruction if.
+#Exercice 2.
 
 #import random
 
@@ -82,3 +79,31 @@
 #nb=int(input("nb"))
 #for i in range(11):
 #    print(nb-i)
+
+#Question 1 ce sont des opérateurs, on peut les utiliser avec les obj de type float str int bool
+
+#Ex2
+
+a=int(input("nb1"))
+b=int(input("nb2"))
+s=input("chaine caractere")
+if s =="addition":
+    print(a+b)
+elif s =="soustracton":
+    print(a-b)
+elif s=="multiplication":
+    print(a*b)
+elif s=="division":
+    print(a/b)
+
+
+#Ex3
+# ON rentre un nb ensuite on défini n =0, on va prendre tous les nb de 0 à 20 par ex,
+# on va mettre au carré chaque nb et s'arreter au premier nb élevé au carré qui sera supérieur à a,ce nb sera égal à n.
+a=int(input("nb"))
+n=0
+for i in range(20):
+    n+=1
+    if n**2>a:
+        print(n)
+        break #Le mot break permet d'arreter l'execution d'une boucle et de passer à l'instruction suivante.
