@@ -1,87 +1,86 @@
-#REFAIRE
+#J'ai effacé prcq t'as même pas respecté les consignes.
+#Correction exercices:
+#1
+import time 
+def tempsEnSeconde(temps):
+    """ Renvoie la valeur en seconde de temps donné comme jour, heure, minute, seconde."""
+    pass
 
-#Un temps a le format suivant: (jour: int, heure: int, minute: int, seconde: int).
-#C'est un tuple de 4 éléments. Par exemple (4, 3, 13, 20) correspond à 4 jours, 3 heures, 13 minutes et 20 secondes.
-#Si on a une variable temps = (4, 3, 13, 20), pour accéder au premier élément on fait temps\[0\] ce qui donne 4,
-#le nombre de jours.
+    return temps[0]*24*3600+temps[1]*3600+temps[2]*60+temps[3]
 
-#Temps en seconde = tes
-#a,b,c,d="jours","heures","minutes","secondes"
-#"Il y a",temps[0],"jours",temps[1],"heures",temps[2],"minutes",temps[3],"secondes" 
-#1jour=86400sec, 1h=3600sec,1min = 60sec
-def tes(temps):
-    a,b,c,d=2,1,0,0
-    temps=(a,b,c,d)
-    js=(temps[0]*24)*3600 #ou temps[0]*86400
-    hs=(temps[1])*3600
-    ms=(temps[2])*60
+temps =(24,234,3,1)
+print(tempsEnSeconde(temps))
+#24*3600 soit 86400
+def secondeEnTemps(seconde):
+    """Renvoie le temps (jour, heure, minute, seconde) qui correspond au nombre de seconde passé en argument"""
+    pass
+    j= seconde//86400
+    h=(seconde%86400)//3600
+    min=(seconde%(24*3600))%3600//60
+    s=(seconde%(24*3600))%3600%60  #Revoir
+
+    return(j,h,min,s) 
     
-    print("Il y a",js+hs+ms+temps[3],"secondes dans",temps[0],"jours",temps[1],"heures",temps[2],"minutes et",temps[3],"secondes")
-tes(2)
-
-#secondes en temps = scet
-def scet(temps): #RATE REFAIRE
-    a=temps
-    aj=a//86400
-    ah=aj*24
-    am=ah*60
-    asc=am*60
-    print("C'est égal à",aj,"jours",ah,"heures",am,"minutes et",asc,"secondes")
-scet(7295762)
-
-def afficheTemps(jour,heure,minutes,secondes):
-    #jour,heure,minutes,secondes=1,2,3,4
-    j,h,m,s=("jour"),("heure"),("minute"),("seconde")
-    if jour>1:
-        j+="s"
-    else:
-        j=""
-        jour=""
-    if heure>1:
-        h+="s"
-    else:
-        heure=""
-        h=""
-    if minutes>1:
-        m+="s"
-    else:
-        minutes=""
-        m=""
-    if secondes>1:
-        s+="s"
-    else:
-        secondes=""
-        s=""
-    print(jour,j,heure,h,minutes,m,secondes,s)
+temps = secondeEnTemps(100000)
+print(temps[0],"jours",temps[1],"heures",temps[2],"minutes",temps[3],"secondes")
 
 
-afficheTemps(0,0,0,8)
+def pluriel(mot,nb):#Revoir
+    if nb>0:
+        print("",nb,mot,end="")
+    if nb>1:
+        print("s",end="")
+def afficheTemps(temps):
+    
+    pluriel("jour",temps[0])
+    pluriel("heure",temps[1])
+    pluriel("minute",temps[2])
+    pluriel("seconde",temps[3])
 
-def sommeTemps(t1,t2):
-    a,b,c,d=(t1[0]+t2[0]),(t1[1]+t2[1]),(t1[2]+t2[2]),(t1[3]+t2[3])
-    j,h,m,s=("jour"),("heure"),("minute"),("seconde")
-    if a>1:
-        j+="s"
-    else:
-        j=""
-        a=""
-    if b>1:
-        h+="s"
-    else:
-        b=""
-        h=""
-    if c>1:
-        m+="s"
-    else:
-        c=""
-        m=""
-    if d>1:
-        s+="s"
-    else:
-        d=""
-        s=""
-    print(a,j,b,h,c,m,d,s)
-sommeTemps((0,1,2,3),(0,3,4,5))
 
-def prptemps(temps,proportion):
-    print("blabla")
+afficheTemps((1,0,14,23)) 
+
+def demandeTemps():
+    
+    j=-1
+    h=-1
+    m=-1
+    s=-1
+    while j<0:
+        j=int(input("nb 1 "))
+    while h<0 or h>=24:
+        h=int(input("nb 2 "))
+    while m<0 or m>=60:
+        m=int(input("nb 3 "))
+    while s<0 or s>=60:
+        s=int(input("nb 4 "))
+    return (j,h,m,s)
+
+def sommeTemps(temps1,temps2):
+    
+    return secondeEnTemps(tempsEnSeconde(temps1)+tempsEnSeconde(temps2))
+sommeTemps((2,3,4,25),(5,22,57,1))
+afficheTemps(demandeTemps())
+
+def proportionTemps(temps,proportion):
+    
+    return secondeEnTemps(int(tempsEnSeconde(temps)*proportion))
+
+#afficheTemps(proportionTemps((2,0,36,0),0.2))
+afficheTemps(proportionTemps(proportion=0.2,temps=(2,0,36,0)))#Revoir
+
+def tempsendate(temps):
+    a=1970+temps[0]//365
+    j=1+temps[0]%365
+    return(a,j,temps[1],temps[2],temps[3])
+
+def affichedate(date:tuple=()):
+    if len(date)==0:
+        date=tempsendate(secondeEnTemps(int(time.time())))
+    print("jour",date[1],"de l'année",date[0],"à",str(date[2])+":"+str(date[3])+":"+str(date[4]))
+
+print(time.time)
+temps = secondeEnTemps(1000000000)
+afficheTemps(temps)
+affichedate(tempsendate(temps))
+affichedate()
