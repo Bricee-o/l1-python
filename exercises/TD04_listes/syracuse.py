@@ -9,6 +9,17 @@ def syracuse(n):
             a.append(n*3+1)
             n=n*3+1
     return a
+
+#Autre version
+#def syracuse(n):
+#    L=[n]
+#    while n!=1:
+#       if n%2==0:
+#           n//2
+#       else:
+#           n=(n*3+1)
+#       L.append(n)
+
 print(syracuse(3))
 
 def testeConjecture(n_max):
@@ -18,6 +29,10 @@ def testeConjecture(n_max):
     else:
         return True  
 print(testeConjecture(10000))
+#Autre version
+#for i in range(i,n_max+1):
+#       syracuse(i)
+#    return True
 
 def tempsVol(n):
     b=syracuse(n)
@@ -30,4 +45,16 @@ def tempsVolListe(n_max):#FINIR
 
     return "Le temps de vol est",(i for i in range(len(a[1:n_max])))
 print(tempsVolListe(1000))
+
+#Correction temps voliste:
+def tempsVolListe(n_max):
+    return [tempsVol(i) for i in range(i,n_max+1)]
+
+L=tempsVolListe(1000)
+t_max=max(L)
+print(("l'entier",(index(t_max))+1),"a le plus grand tps",t_max)#comprend pas ????
+
+L_alt=alt_max_liste(10000)
+b=max(L_alt)
+print("l'entier etc...")
 

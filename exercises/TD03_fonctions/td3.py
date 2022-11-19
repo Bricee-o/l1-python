@@ -47,7 +47,7 @@ def demandeTemps():
     m=-1
     s=-1
     while j<0:
-        j=int(input("nb 1 "))
+        j=int(input("nb 1 "))#erreur jsp pourquoi
     while h<0 or h>=24:
         h=int(input("nb 2 "))
     while m<0 or m>=60:
@@ -84,3 +84,37 @@ temps = secondeEnTemps(1000000000)
 afficheTemps(temps)
 affichedate(tempsendate(temps))
 affichedate()
+
+#année bisextile:
+def estbisextile(annee):
+    return annee%4==0 and (annee%100!=0 or annee%400==0)
+
+def bisextile(jour):
+    annee=1970
+    while jour>=365:
+        if estbisextile(annee):
+            print("l'année"+str(annee)+"est bisextile")
+        else:
+            jour-=366
+        anne+=1
+
+
+bisextile(20000)
+
+def nombreBisextile(jour):
+    annee=1970
+    i=0
+    while jour>=365:
+        if estbisextile(annee):
+            print("l'année"+str(annee)+"est bisextile")
+            i+=1
+        else:
+            jour-=366
+        anne+=1
+    return i
+
+def temps(temps):
+    jour,heures,minutes,secondes=temps
+    jour=jour-nombreBisextile(jour)
+    temps_modif=(jour,heures,minutes,secondes)
+    return tempsendate(temps_modif)
