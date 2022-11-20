@@ -72,9 +72,7 @@ def estCarreMagique(carre):
             return True
     else:
         return False
-  
-print(estCarreMagique(carre_mag))
-print(estCarreMagique(carre_pas_mag))
+ 
 
 def estNormal(carre):
     n,b=0,1
@@ -82,26 +80,24 @@ def estNormal(carre):
         n+=1
     l=[]
     for i in carre:
-        for j in i:
-            print(j)
+        for j in i:     
             l.append(j)
     l.sort()
-    print("liste triée",l)
-    print("valeur de n:",n)
     if n**2>l[-1]:
         return False
-    elif l.count(b)==0:
-            return False
     else:
         while b!=len(l):
-            l.count(b)
-            
-            b+=1
-            print("b",b)
+            if l.count(b)!=1:
+                return False
+            else:
+                b+=1 
         return True
+print(estNormal(carre_pas_mag))
+print(estNormal(carre_mag))
         
-    
+
+ 
     
 
-print(estNormal(carre_mag))
-print(estNormal(carre_pas_mag))
+
+
