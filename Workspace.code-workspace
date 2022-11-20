@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "Perso-leetcode",
+			"path": "../../../UVSQ/INFORMATIQUE/Perso-leetcode"
+		},
+		{
+			"name": ".leetcode",
+			"path": "../../../../Users/samde/.leetcode"
+		}
+	],
+	"settings": {}
+}
