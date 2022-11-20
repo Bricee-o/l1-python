@@ -92,6 +92,22 @@ def estNormal(carre):
             else:
                 b+=1 
         return True
+
+print(afficheCarre(carre_mag))
+print(afficheCarre(carre_pas_mag))
+
+print(testLignesEgales(carre_mag))
+print(testLignesEgales(carre_pas_mag))
+
+print(testColonnesEgales(carre_mag))
+print(testColonnesEgales(carre_pas_mag))
+
+print(testDiagonalesEgales(carre_mag))
+print(testDiagonalesEgales(carre_pas_mag))
+
+print(estCarreMagique(carre_mag))
+print(estCarreMagique(carre_pas_mag))
+
 print(estNormal(carre_pas_mag))
 print(estNormal(carre_mag))
         
