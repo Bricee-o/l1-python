@@ -6,8 +6,6 @@ def afficheCarre(carre):
         a=print(i[0:4])
     return a
 
-afficheCarre(carre_mag)  
-afficheCarre(carre_pas_mag)
 
 def testLignesEgales(carre):
     a=carre
@@ -26,8 +24,6 @@ def testLignesEgales(carre):
     else:
         return -1
 
-print(testLignesEgales(carre_mag))
-print(testLignesEgales(carre_pas_mag))
 
 def testColonnesEgales(carre):
     s,sa,sb,sc=0,0,0,0
@@ -42,8 +38,6 @@ def testColonnesEgales(carre):
     else:
         return -1
     
-print(testColonnesEgales(carre_mag))
-print(testColonnesEgales(carre_pas_mag))
 
 def testDiagonalesEgales(carre):
     b=[]
@@ -70,12 +64,44 @@ def testDiagonalesEgales(carre):
         return print("La somme des valeurs de la diagonale gauche est égale à",dg,"et",dd,"pour celle de droite.")
     else:
         return -1
-print(testDiagonalesEgales(carre_mag))
+
 
 def estCarreMagique(carre):
-    if testLignesEgales(carre)==True:
-        print("yes")
+    if testLignesEgales(carre) and testColonnesEgales(carre) !=-1:
+        if testDiagonalesEgales(carre) !=-1:
+            return True
     else:
-        False
-    return
+        return False
+  
 print(estCarreMagique(carre_mag))
+print(estCarreMagique(carre_pas_mag))
+
+def estNormal(carre):
+    n,b=0,1
+    for i in range(len(carre)):
+        n+=1
+    l=[]
+    for i in carre:
+        for j in i:
+            print(j)
+            l.append(j)
+    l.sort()
+    print("liste triée",l)
+    print("valeur de n:",n)
+    if n**2>l[-1]:
+        return False
+    elif l.count(b)==0:
+            return False
+    else:
+        while b!=len(l):
+            l.count(b)
+            
+            b+=1
+            print("b",b)
+        return True
+        
+    
+    
+
+print(estNormal(carre_mag))
+print(estNormal(carre_pas_mag))
