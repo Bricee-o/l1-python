@@ -1,14 +1,35 @@
-carre_mag=[[4,14,15,1],[9,7,6,12],[5,11,10,8],[16,2,3,13]]
-carre_pas_mag=[[4,14,15,1],[9,7,6,12],[5,11,10,8],[16,2,7,13]]
+#Revoir ces exos pour la kholle.
 
+carre_mag=[[4,14,15,1],[9,7,6,12],[5,11,10,8],[16,2,3,13]]
+carre_pas_mag=[]
+
+#1ere solution
+for i in range(len(carre_mag)):
+    carre_pas_mag.append([])
+    for j in range(len(carre_mag[i])):
+        carre_pas_mag[i].append(carre_mag[i][j])
+ 
+#2eme solution for l in carre_mag:
+    #carre_pas_mag.append(l.copy())
+    
+#3eme solution avec liste en compréhension: carre_pas_mag=[l[:] for l in carre_mag]
+carre_pas_mag[3][2]=7
+    
 def afficheCarre(carre):
     for i in carre:
-        a=print(i[0:4])
-    return a
+        print(i[0:])
+    return 
 
 
-def testLignesEgales(carre):
-    a=carre
+def testLignesEgales(carre:list)->int:#Autre notation
+#1ere Solution:
+    somme=sum(carre[0])
+    for l in carre:
+        if sum(l)!=somme:
+            return -1
+    return somme
+
+    a=carre#Programme pas généralisé donc faux.
     somme,sommeb,sommec,sommed=0,0,0,0
     
     for i in a[0]:
@@ -26,8 +47,15 @@ def testLignesEgales(carre):
 
 
 def testColonnesEgales(carre):
+    c1=[lignes[0] for lignes in carre]
+    somme=sum(c1)
+    for j in range(1,len(carre)):
+        colonne=[lignes[j] for lignes in carre]
+        if sum(colonne)!=somme:
+            return -1
+    return somme
+#Faux car non generalisé.    
     s,sa,sb,sc=0,0,0,0
-    a=len(carre)
     for i in carre:
         s+=i[0]
         sa+=i[1]
@@ -40,11 +68,23 @@ def testColonnesEgales(carre):
     
 
 def testDiagonalesEgales(carre):
+    taille=len(carre)
+    diago1=[carre[i][i] for i in range(taille)]
+    diago2=[carre[i][taille-i-1] for i in range(taille)]
+    somme=sum(diago1)
+    if sum(diago2)!=somme:
+        return -1
+    else:
+        return somme
+    k=0
+    for i in range(len(carre)):
+        k+=1
     b=[]
     c=[]
-    i,j,n=0,0,3
+    i,j,=0,0
+    n=(len(carre)-1)
     sg,sd=[],[]
-    for a in range(4):#gauche
+    for a in range(k):#gauche
         b.append(carre[i])
         sg.append(b[i][i])
         i+=1    
@@ -52,7 +92,7 @@ def testDiagonalesEgales(carre):
     dg,dd=0,0
     for g in sg:
         dg+=g
-    for j in range(4):
+    for j in range(k):
         c.append(carre[j])
         sd.append(c[j][n])
         j+=1
@@ -67,6 +107,8 @@ def testDiagonalesEgales(carre):
 
 
 def estCarreMagique(carre):
+    return testLignesEgales(carre)==testColonnesEgales(carre)and testLignesEgales(carre)==testDiagonalesEgales(carre)!=-1
+    #Ca marche aussi !
     if testLignesEgales(carre) and testColonnesEgales(carre) !=-1:
         if testDiagonalesEgales(carre) !=-1:
             return True
@@ -75,6 +117,17 @@ def estCarreMagique(carre):
  
 
 def estNormal(carre):
+    #autre solution:
+    liste=[]
+    for l in carre:
+        liste.extend(l)
+    taille=len(carre)
+    for entier in range(1,taille*taille+1):
+        if entier not in liste:
+            return False
+    return True
+    
+    #Cette solution marche aussi.
     n,b=0,1
     for i in range(len(carre)):
         n+=1
