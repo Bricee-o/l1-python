@@ -67,7 +67,7 @@ def testColonnesEgales(carre):
         return -1
     
 
-def testDiagonalesEgales(carre):
+def testDiagonalesEgales(carre):#revoir
     taille=len(carre)
     diago1=[carre[i][i] for i in range(taille)]
     diago2=[carre[i][taille-i-1] for i in range(taille)]

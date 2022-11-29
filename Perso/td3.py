@@ -1,5 +1,4 @@
-#J'ai effacé prcq t'as même pas respecté les consignes.
-#Correction exercices:
+
 #1
 import time 
 def tempsEnSeconde(temps):
