@@ -82,28 +82,62 @@
 
 #Question 1 ce sont des opérateurs, on peut les utiliser avec les obj de type float str int bool
 
-#Ex2
+#Ex 2:
 
-a=int(input("nb1"))
-b=int(input("nb2"))
-s=input("chaine caractere")
-if s =="addition":
-    print(a+b)
-elif s =="soustracton":
-    print(a-b)
-elif s=="multiplication":
-    print(a*b)
-elif s=="division":
-    print(a/b)
+#a=int(input("nb1"))
+#b=int(input("nb2"))
+#s=input("chaine caractere")
+#if s =="addition":
+#    print(a+b)
+#elif s =="soustracton":
+#    print(a-b)
+#elif s=="multiplication":
+#    print(a*b)
+#elif s=="division":
+#    print(a/b)
 
 
 #Ex3
 # ON rentre un nb ensuite on défini n =0, on va prendre tous les nb de 0 à 20 par ex,
 # on va mettre au carré chaque nb et s'arreter au premier nb élevé au carré qui sera supérieur à a,ce nb sera égal à n.
-a=int(input("nb"))
-n=0
-for i in range(20):
-    n+=1
-    if n**2>a:
-        print(n)
-        break #Le mot break permet d'arreter l'execution d'une boucle et de passer à l'instruction suivante.
+#a=int(input("nb"))
+#n=0
+#for i in range(20):
+#    n+=1
+#    if n**2>a:
+#        print(n)
+#        break #Le mot break permet d'arreter l'execution d'une boucle et de passer à l'instruction suivante.
+
+#Kholle n°2
+
+#Ex1 #FAUX  A REFAIRE
+
+l=[1,2,3,4,5]
+
+
+def factoriel(liste):
+    l2=[]
+    while len(liste)!=len(l2):
+        for i in range(1,len(liste)+1):
+            l2.append(i)
+    
+    
+    
+    return l2
+
+print(factoriel(l))
+
+import random #BON
+l=[[0,0,0],[0,0,0],[0,0,0]]
+def aleatoire(liste):
+    
+    for k in range(6):
+        a=random.randint(0,2)
+        b=random.randint(0,2)
+        liste[a][b]=1
+    return liste
+
+print(aleatoire(l))
+
+
+
